@@ -1,0 +1,919 @@
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">    
+       <title>DigiTools Panel</title>
+
+   <link href="https://digit00ls.com/assets/css/bootstrap.min.css" rel="stylesheet" >
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" rel="stylesheet"/>
+   <link href="https://digit00ls.com/assets/css/style.css" rel="stylesheet" type="text/css" />
+   <link href="https://digit00ls.com/assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+   <link href="https://digit00ls.com/assets/css/bootstrap.min.backup.css" rel="stylesheet" type="text/css">
+   <link href="https://digit00ls.com/assets/css/core.css" rel="stylesheet" type="text/css">
+   <link href="https://digit00ls.com/assets/css/components.css" rel="stylesheet" type="text/css">
+   <link href="https://digit00ls.com/assets/css/icons.css" rel="stylesheet" type="text/css">
+   <link href="https://digit00ls.com/assets/css/pages.css" rel="stylesheet" type="text/css">  
+   <link href="https://digit00ls.com/assets/plugins/sweetalert/dist/sweetalert.css" rel="stylesheet" type="text/css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+	<script src="https://digit00ls.com/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="https://digit00ls.com/assets/plugins/datatables/dataTables.bootstrap.js"></script>
+	<script src="https://digit00ls.com/assets/js/header.js"></script>
+
+
+      <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]-->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71472626-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript">
+
+   $(window).load(function() {
+     $(".loader").fadeOut("slow");
+   })
+
+
+
+//mbyll popupin tek edit
+function exit(){
+    $(".sweet-overlay").fadeOut();
+          $(".showSweetAlert").fadeOut();
+          window.location.href=window.location.href;                                    
+}
+
+</script>
+
+
+   </head>
+   <body class="fixed-left">
+      <div id="wrapper" >
+         <div class="topbar">
+            <div class="topbar-left">
+               <div class="text-center"><a href="index?" class="logo"><img src="/assets/images/hack.png"></a></div>
+            </div>
+            <div class="navbar navbar-default" role="navigation">
+               <div class="container">
+                  <div class="">
+                     <div class="pull-left"><button class="button-menu-mobile open-left"><i class="ion-navicon"></i></button> <span class="clearfix"></span></div>
+
+                     <form  action="?usersSearch" method="GET" class="navbar-left app-search pull-left hidden-xs">
+                     <input type="text" placeholder="Search Username" class="form-control" name="search"> 
+                         <a href="#"><i class="fa fa-search"></i></a>
+                     </form>
+                    
+                     <ul class="nav navbar-nav navbar-right pull-right">
+                        
+                        <li class="dropdown hidden-xs">
+                           <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><i class="icon-bell"></i> 
+
+                           <!-- <span class="badge badge-xs badge-danger">3</span> -->
+
+                           </a>
+                         
+
+                           <ul class="dropdown-menu dropdown-menu-lg">
+                              <li class="notifi-title"><span class="label label-default pull-right">New 3</span>Notification</li>
+                              <li class="list-group nicescroll notification-list">
+                                 <a href="javascript:void(0);" class="list-group-item">
+                                    <div class="media">
+                                       <div class="pull-left p-r-10"><em class="fa fa-diamond fa-2x text-primary"></em></div>
+                                       <div class="media-body">
+                                          <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                          <p class="m-0"><small>There are new settings available</small></p>
+                                       </div>
+                                    </div>
+                                 </a>
+                                 <a href="javascript:void(0);" class="list-group-item">
+                                    <div class="media">
+                                       <div class="pull-left p-r-10"><em class="fa fa-cog fa-2x text-custom"></em></div>
+                                       <div class="media-body">
+                                          <h5 class="media-heading">New settings</h5>
+                                          <p class="m-0"><small>There are new settings available</small></p>
+                                       </div>
+                                    </div>
+                                 </a>
+                                 <a href="javascript:void(0);" class="list-group-item">
+                                    <div class="media">
+                                       <div class="pull-left p-r-10"><em class="fa fa-bell-o fa-2x text-danger"></em></div>
+                                       <div class="media-body">
+                                          <h5 class="media-heading">Updates</h5>
+                                          <p class="m-0"><small>There are <span class="text-primary font-600">2</span> new updates available</small></p>
+                                       </div>
+                                    </div>
+                                 </a>
+                                 <a href="javascript:void(0);" class="list-group-item">
+                                    <div class="media">
+                                       <div class="pull-left p-r-10"><em class="fa fa-user-plus fa-2x text-info"></em></div>
+                                       <div class="media-body">
+                                          <h5 class="media-heading">New user registered</h5>
+                                          <p class="m-0"><small>You have 10 unread messages</small></p>
+                                       </div>
+                                    </div>
+                                 </a>
+                                 <a href="javascript:void(0);" class="list-group-item">
+                                    <div class="media">
+                                       <div class="pull-left p-r-10"><em class="fa fa-diamond fa-2x text-primary"></em></div>
+                                       <div class="media-body">
+                                          <h5 class="media-heading">A new order has been placed A new order has been placed</h5>
+                                          <p class="m-0"><small>There are new settings available</small></p>
+                                       </div>
+                                    </div>
+                                 </a>
+                                 <a href="javascript:void(0);" class="list-group-item">
+                                    <div class="media">
+                                       <div class="pull-left p-r-10"><em class="fa fa-cog fa-2x text-custom"></em></div>
+                                       <div class="media-body">
+                                          <h5 class="media-heading">New settings</h5>
+                                          <p class="m-0"><small>There are new settings available</small></p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li><a href="javascript:void(0);" class="list-group-item text-right"><small class="font-600">See all notifications</small></a></li>
+                           </ul>
+
+
+                        </li>
+                        <li class="hidden-xs">
+                         <a href="https://digit00ls.com" target="_blank" style="padding-left: 49px;">Shop</a></li>
+                         <li class="hidden-xs"><a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="icon-size-fullscreen"></i></a></li>
+                        <li class="dropdown">
+                           <a href="#" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="https://digit00ls.com/assets/images/loading.gif" alt="user-img" class="img-circle"></a>
+                           <ul class="dropdown-menu">
+                              <li><a href="../?profile"><i class="ti-user m-r-5"></i> Profile</a></li>
+                              <li><a href="../logoff"><i class="ti-power-off m-r-5"></i> Logout</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+  <div class="content-page" >
+  <div class="content">
+
+<style>
+.containers {
+    overflow: hidden;
+    background-color: #36404a;
+    font-family: Arial;
+}
+
+.containers a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-adivgn: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.drop {
+    float: left;
+    overflow: hidden;
+}
+
+.drop .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outdivne: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+
+.containers a:hover, .drop:hover .dropbtn {
+    background-color: rgba(95, 190, 170, 0.75);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-adivgn: left;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(95, 190, 170, 0.75);
+}
+
+.drop:hover .dropdown-content {
+    display: block;
+}
+</style>
+
+			<div class="containers">
+                    <a href="index" >Index</a>  
+                    <a href="?news" >News</a>
+                    
+
+                  <div class="drop">
+                       <button class="dropbtn">Payments</button>
+                      <div class="dropdown-content">
+                       <a href="?payments">Confirmed Payment </a>
+                        <a href="?payments=pending">Pending Payment</a>
+                      </div>
+                     </div>
+
+
+                    <a href="?add_balance">Balance</a>
+                    <a href="?messages">Messages</a> 
+                    <a href="?settings">Settings</a>
+                    <a href="?support">Support</a>
+
+                    <div class="drop">
+                    	 <button class="dropbtn">Users</button>
+                      <div class="dropdown-content">
+                       <a href="?online">Online</a>
+                       <a href="?search">Search</a>
+                        <a href="?users">All Users</a>
+                        <a href="?users&reseller">Reseller</a>
+                        <a href="?users&email">All Email</a>              
+                      </div>
+                     </div>
+
+                      <div class="drop">
+                      <button class="dropbtn">Sold </button>
+                        <div class="dropdown-content">
+	                        <a href="?sold">Tools</a>
+	                        <a href="?sold_c">Cards</a> 
+	                        <a href="?extract_sold_tools">Extract Tools</a>   
+                        </div>
+                      </div>              
+
+
+
+                    <div class="drop"> 
+                    <button class="dropbtn">Unsold</button>
+                      <div class="dropdown-content">
+                         <a href="?unsold">Tools</a>
+                         <a href="?unsold_c">Cards</a>  
+                         <a href="?extract_tools">Extract Tools</a>
+                         <a href="?cards_out">Extract Cards</a>
+                      </div>
+                     </div>                 
+
+                    <div class="drop" > 
+                    <button class="dropbtn">Withdraw </button>
+                        <div class="dropdown-content">
+                         <a href="?withdraw">Users</a>
+                         <a href="?withdraw_history">History</a>                           
+                      </div>
+                   </div>
+ 
+                       <a href="?sql">SQL</a>
+                       <a href="?top_seller">Top Seller</a> <!-- SELECT  `user_name` , COUNT(  `user_name` ) 
+							FROM  `accounts` 
+							WHERE  `vote_up` =1
+							AND  `sold` =1
+							GROUP BY  `user_name` 
+							ORDER BY COUNT(  `user_name` ) DESC  -->
+                      
+                      
+
+</div> 
+<br>
+<div class="row">
+   <div class="col-sm-12">
+      <div class="card-box">
+
+         <div class="row">
+            <div class="col-md-4">
+                     <h4 class="m-t-0 header-title"><b>Send Personal Message</b></h4>
+					</br></br>
+               <form class="form-horizontal" action="" method="post">
+                 
+                 <div class="form-group">
+					   <label class="col-sm-2 control-label">Username</label>
+					   <div class="col-sm-10">
+					      <input class="form-control" name="username">
+					 					   </div>
+					</div>
+
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Mesage</label>
+                     <div class="col-md-10">
+                     	<textarea class="form-control" name="mesazhi" rows="5"></textarea></div>
+                  </div>
+
+                <div class="form-group">     
+                <label class="col-md-5 control-label"> </label>                
+                     <div class="col-md-5">
+                     	<button type="submit" name="add_inbox" class="btn btn-default waves-effect waves-light">Send</button>
+                     </div>
+                </div>
+               </form>
+            </div>
+
+		
+		<div class="col-md-4">
+                     <h4 class="m-t-0 header-title"><b>Send ALL seller Message</b></h4>
+					</br></br>
+               <form class="form-horizontal" action="" method="post">
+                 
+                  <div class="form-group">
+                     <label class="col-md-2 control-label">Mesage</label>
+                     <div class="col-md-10">
+                     	<textarea class="form-control" name="s_mesazhi" rows="5"></textarea></div>
+                  </div>
+
+                <div class="form-group">     
+                <label class="col-md-5 control-label"> </label>                
+                     <div class="col-md-5">
+                     <br>
+                     	<button type="submit" name="seller_message" class="btn btn-default waves-effect waves-light">Send</button>
+                     </div>
+                </div>
+               </form>
+            </div>
+
+
+         </div>
+      </div>
+
+
+                        <div class="card-box" style="overflow-x: scroll;">
+                           <h4 class="m-t-0 header-title"><b>Message send</b></h4></br>                         
+
+                                   <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info" >
+                                     <thead>
+                                      <tr role="row">                                   
+                                       <th class="no-sort" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" >Username</th>
+                                       <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" >Mesage</th>
+                                       <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"     width="134px" >Data</th>                                   
+                                       <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" >Read</th>
+                                                       
+                                     </tr>
+                                   </thead>
+                                   <!-- class="odd"  class="even" -->
+                                   <tbody>
+                                  <tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully -40.00 $</td>
+                                  <td>2024-04-17 18:01:08</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>gailschubert2</td>
+                                  <td>In your Balance is added successfully 26.56 $</td>
+                                  <td>2024-04-13 14:47:02</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>Bighomes</td>
+                                  <td>In your Balance is added successfully 80.00 $</td>
+                                  <td>2024-04-11 13:00:28</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>ELEANORLACY</td>
+                                  <td>In your Balance is added successfully 30.00 $</td>
+                                  <td>2024-04-07 01:11:35</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>ymrb01</td>
+                                  <td>In your Balance is added successfully 20.00 $</td>
+                                  <td>2024-04-07 01:10:45</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>ymrb01</td>
+                                  <td>In your Balance is added successfully 20.00 $</td>
+                                  <td>2024-04-07 01:10:45</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>ukwubaba21</td>
+                                  <td>In your Balance is added successfully 180.00 $</td>
+                                  <td>2024-04-07 01:09:34</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>softie</td>
+                                  <td>In your Balance is added successfully 300.00 $</td>
+                                  <td>2024-04-07 01:09:23</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>matthuguley</td>
+                                  <td>In your Balance is added successfully 390.00 $</td>
+                                  <td>2024-04-06 02:10:00</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>matthuguley</td>
+                                  <td>In your Balance is added successfully 350.00 $</td>
+                                  <td>2024-04-05 00:36:59</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>williams077</td>
+                                  <td>In your Balance is added successfully 40.00 $</td>
+                                  <td>2024-04-04 00:17:32</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>Gnfhox</td>
+                                  <td>In your Balance is added successfully 60.00 $</td>
+                                  <td>2024-04-03 05:06:37</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>andrewaacton</td>
+                                  <td>In your Balance is added successfully 50.00 $</td>
+                                  <td>2024-04-03 00:17:57</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>ukwubaba21</td>
+                                  <td>In your Balance is added successfully 40.00 $</td>
+                                  <td>2024-04-02 23:42:09</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>matthuguley</td>
+                                  <td>In your Balance is added successfully 245.00 $</td>
+                                  <td>2024-04-02 23:40:57</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>williams077</td>
+                                  <td>In your Balance is added successfully 40.00 $</td>
+                                  <td>2024-04-02 23:39:14</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>yungloc77</td>
+                                  <td>In your Balance is added successfully 49.00 $</td>
+                                  <td>2024-04-02 12:03:04</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>freezel</td>
+                                  <td>In your Balance is added successfully 43.50 $</td>
+                                  <td>2024-04-02 12:02:22</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully -40.00 $</td>
+                                  <td>2024-03-04 18:45:35</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>zachmueller567</td>
+                                  <td>In your Balance is added successfully 70.00 $</td>
+                                  <td>2024-02-10 06:36:25</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>softie</td>
+                                  <td>In your Balance is added successfully 50.00 $</td>
+                                  <td>2024-01-30 08:45:40</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>softie</td>
+                                  <td>In your Balance is added successfully 200.00 $</td>
+                                  <td>2024-01-30 08:39:23</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>yungloc77</td>
+                                  <td>In your Balance is added successfully 120.00 $</td>
+                                  <td>2024-01-24 03:32:08</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>yungloc77</td>
+                                  <td>In your Balance is added successfully 40.00 $</td>
+                                  <td>2024-01-22 16:24:25</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>ninobanks</td>
+                                  <td>In your Balance is added successfully 80.00 $</td>
+                                  <td>2024-01-03 03:40:28</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>zachmueller567</td>
+                                  <td>In your Balance is added successfully 24.00 $</td>
+                                  <td>2023-11-01 17:02:23</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>mark1122</td>
+                                  <td>In your Balance is added successfully 50.00 $</td>
+                                  <td>2023-09-10 20:10:45</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>winkel</td>
+                                  <td>In your Balance is added successfully -50.00 $</td>
+                                  <td>2023-08-09 07:50:59</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>andrewaacton</td>
+                                  <td>In your Balance is added successfully 50.00 $</td>
+                                  <td>2023-08-09 07:50:51</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>tollex112240</td>
+                                  <td>In your Balance is added successfully -70.00 $</td>
+                                  <td>2023-07-31 15:44:22</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>tollex112240</td>
+                                  <td>In your Balance is added successfully -30.00 $</td>
+                                  <td>2023-07-23 20:26:07</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>tollex112240</td>
+                                  <td>In your Balance is added successfully 450.00 $</td>
+                                  <td>2023-06-22 20:23:57</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>tollex112240</td>
+                                  <td>In your Balance is added successfully 250.00 $</td>
+                                  <td>2023-06-10 04:27:58</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>zachmueller567</td>
+                                  <td>In your Balance is added successfully 40.00 $</td>
+                                  <td>2023-05-19 22:38:57</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>jihnio1no</td>
+                                  <td>In your Balance is added successfully -10.00 $</td>
+                                  <td>2023-05-17 17:29:38</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td></td>
+                                  <td>In your Balance is added successfully -120.00 $</td>
+                                  <td>2023-05-17 15:49:06</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>zachmueller567</td>
+                                  <td>In your Balance is added successfully 120.00 $</td>
+                                  <td>2023-05-17 15:48:52</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td></td>
+                                  <td>In your Balance is added successfully 120.00 $</td>
+                                  <td>2023-05-17 15:48:39</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 58.00 $</td>
+                                  <td>2023-05-16 15:57:56</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>zachmueller567</td>
+                                  <td>In your Balance is added successfully 150.00 $</td>
+                                  <td>2023-05-16 02:11:20</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 10.00 $</td>
+                                  <td>2023-05-03 02:30:11</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>delly5000</td>
+                                  <td>In your Balance is added successfully 114.00 $</td>
+                                  <td>2023-04-23 20:07:07</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>ghost4001</td>
+                                  <td>In your Balance is added successfully 160.00 $</td>
+                                  <td>2023-01-29 04:19:01</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>ghost400</td>
+                                  <td>In your Balance is added successfully -160.00 $</td>
+                                  <td>2023-01-29 04:18:57</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>matthuguley</td>
+                                  <td>In your Balance is added successfully 10.00 $</td>
+                                  <td>2023-01-20 15:25:09</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully -200.00 $</td>
+                                  <td>2023-01-06 18:04:45</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 200.00 $</td>
+                                  <td>2023-01-06 02:36:28</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>tollex112240</td>
+                                  <td>In your Balance is added successfully 200.00 $</td>
+                                  <td>2022-11-12 16:47:07</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>tollex112240</td>
+                                  <td>In your Balance is added successfully 150.00 $</td>
+                                  <td>2022-11-12 16:15:47</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>free2dive99</td>
+                                  <td>In your Balance is added successfully 400.00 $</td>
+                                  <td>2022-11-07 08:21:22</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully 230.00 $</td>
+                                  <td>2022-10-27 07:15:02</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>zachmueller567</td>
+                                  <td>In your Balance is added successfully -100.00 $</td>
+                                  <td>2022-10-10 19:55:23</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>ayoon</td>
+                                  <td>hello please send ur icq username ! i want to add you some balance</td>
+                                  <td>2022-10-10 19:47:04</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>zachmueller567</td>
+                                  <td>In your Balance is added successfully 120.00 $</td>
+                                  <td>2022-10-01 18:07:14</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>zachmueller567</td>
+                                  <td>In your Balance is added successfully 300.00 $</td>
+                                  <td>2022-09-26 14:06:05</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>zachmueller567</td>
+                                  <td>In your Balance is added successfully 70.00 $</td>
+                                  <td>2022-09-21 15:57:19</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>zachmueller567</td>
+                                  <td>In your Balance is added successfully 50.00 $</td>
+                                  <td>2022-09-21 15:51:44</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>zachmueller567</td>
+                                  <td>In your Balance is added successfully 250.00 $</td>
+                                  <td>2022-09-21 15:51:04</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 10.00 $</td>
+                                  <td>2022-08-30 10:40:21</td>
+                                  <td><i>NO</i></td>                                                         
+                                  </tr><tr>
+                                  <td>zachmueller567</td>
+                                  <td>In your Balance is added successfully -120.00 $</td>
+                                  <td>2022-08-23 05:09:11</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>tollex112240</td>
+                                  <td>In your Balance is added successfully 10.00 $</td>
+                                  <td>2022-08-22 15:33:21</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>zachmueller567</td>
+                                  <td>In your Balance is added successfully 150.00 $</td>
+                                  <td>2022-08-22 15:33:00</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>eddyhard40</td>
+                                  <td>In your Balance is added successfully 25.00 $</td>
+                                  <td>2022-08-22 11:22:31</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully -150.00 $</td>
+                                  <td>2022-07-17 23:31:39</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully 150.00 $</td>
+                                  <td>2022-07-17 23:31:02</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully -30.00 $</td>
+                                  <td>2022-07-08 22:54:17</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully -130.00 $</td>
+                                  <td>2022-07-08 22:48:15</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully -85.00 $</td>
+                                  <td>2022-06-07 21:48:52</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 25.00 $</td>
+                                  <td>2022-06-03 03:34:43</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 60.00 $</td>
+                                  <td>2022-05-26 22:44:00</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>ukwudaddy</td>
+                                  <td>Hello the rdp i refuned yesterday is working sir!
+please recheck it again </td>
+                                  <td>2022-05-25 16:46:05</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully -50.00 $</td>
+                                  <td>2022-05-25 14:10:27</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 80.00 $</td>
+                                  <td>2022-05-19 12:26:04</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully -50.00 $</td>
+                                  <td>2022-05-12 10:18:41</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 70.00 $</td>
+                                  <td>2022-05-11 07:11:21</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>wagleyjames90</td>
+                                  <td>In your Balance is added successfully 100.00 $</td>
+                                  <td>2022-05-05 00:57:19</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully 400.00 $</td>
+                                  <td>2022-05-05 00:57:08</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>wagleyjames90</td>
+                                  <td>In your Balance is added successfully -100.00 $</td>
+                                  <td>2022-05-05 00:46:43</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully -400.00 $</td>
+                                  <td>2022-05-05 00:45:54</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully -30.00 $</td>
+                                  <td>2022-04-29 10:25:33</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 30.00 $</td>
+                                  <td>2022-04-29 10:25:24</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 30.00 $</td>
+                                  <td>2022-04-28 16:28:46</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully 50.00 $</td>
+                                  <td>2022-04-27 01:33:35</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully -150.00 $</td>
+                                  <td>2022-04-24 00:27:36</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully -150.00 $</td>
+                                  <td>2022-04-24 00:24:35</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully 150.00 $</td>
+                                  <td>2022-04-24 00:20:09</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>oluwa12345</td>
+                                  <td>In your Balance is added successfully 10.00 $</td>
+                                  <td>2022-04-11 18:29:54</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully 65.00 $</td>
+                                  <td>2022-03-08 20:26:26</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 30.00 $</td>
+                                  <td>2022-03-08 19:43:39</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 120.00 $</td>
+                                  <td>2022-03-08 16:57:31</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 180.00 $</td>
+                                  <td>2022-03-08 16:19:42</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully -100.00 $</td>
+                                  <td>2022-02-23 03:30:12</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully -55.00 $</td>
+                                  <td>2022-02-21 19:19:56</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>simber88</td>
+                                  <td>In your Balance is added successfully 50.00 $</td>
+                                  <td>2022-01-05 00:06:53</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>skillz12</td>
+                                  <td>In your Balance is added successfully 50.00 $</td>
+                                  <td>2022-01-05 00:03:40</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>wagleyjames90</td>
+                                  <td>In your Balance is added successfully -100.00 $</td>
+                                  <td>2021-12-19 15:16:58</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>matthuguley</td>
+                                  <td>In your Balance is added successfully 80.00 $</td>
+                                  <td>2021-12-19 15:14:32</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>matthuguley</td>
+                                  <td>In your Balance is added successfully 30.00 $</td>
+                                  <td>2021-12-19 15:06:46</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 20.00 $</td>
+                                  <td>2021-12-09 18:27:05</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr><tr>
+                                  <td>dan014</td>
+                                  <td>In your Balance is added successfully 20.00 $</td>
+                                  <td>2021-12-09 18:26:54</td>
+                                  <td><strong>YES</strong></td>                                                         
+                                  </tr>                                </tbody>
+                                </table>
+                        </div>
+              
+
+
+
+   </div>
+</div>  <br/>
+  <br />   
+
+
+
+          </div> 
+
+          </div>  
+    </div>  
+
+  <center><footer class="footer text-right">2020 © DigiTools</footer><center>
+               
+      
+
+
+      <script type="text/javascript">$(document).ready(function() {    
+
+                   $('#datatable').dataTable({
+                       "lengthMenu": [[25, 50, 75, 100, -1], [25, 50, 75,100, "All"]],
+                       "order": [],
+                              "columnDefs": [ {
+                               "targets"  : 'no-sort',
+                               "orderable": false,
+                             }]
+                   });
+
+         });
+      </script>
+            
+      <script src="../assets/js/bootstrap.min.js"></script>    
+
+
+   </body>
+</html>
